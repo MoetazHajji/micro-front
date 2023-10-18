@@ -9,15 +9,18 @@ import { VitrineLayoutComponent } from './vitrine-layout/vitrine-layout.componen
 
 
 @NgModule({
-  declarations: [
-    VitrineComponent,
-    FooterComponent,
-    HeaderComponent,
-    VitrineLayoutComponent
-  ],
-  imports: [
-    CommonModule,
-    VitrineRoutingModule
-  ]
+    declarations: [
+        VitrineComponent,
+        FooterComponent,
+        HeaderComponent,
+        VitrineLayoutComponent
+    ],
+    exports: [
+        FooterComponent
+    ],
+    imports: [
+        CommonModule,
+        VitrineRoutingModule
+    ]
 })
 export class VitrineModule { }

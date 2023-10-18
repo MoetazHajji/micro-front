@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard.component';
-import {VitrineComponent} from "../vitrine/vitrine.component";
+import {AdminLayoutComponent} from "./admin-layout/admin-layout.component";
+import {ProductComponent} from "./product/product.component";
 
 const routes: Routes = [
-  { path: 'admin', component: DashboardComponent },
-  { path: '', component: VitrineComponent }
+  {path:'',component:ProductComponent},
+  {
+    path:'product',component:AdminLayoutComponent,
+    children: [{
+      path:'',component:ProductComponent
+    }]
+  }
 ];
 
 @NgModule({
