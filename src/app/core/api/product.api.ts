@@ -39,7 +39,7 @@ export class ProductApi extends ResourceService<ProductModel> {
     return this.getById(id);
   }
 
-  public removeProduct(id: string): Observable<any> {
+  public removeProduct(id: any): Observable<any> {
     this.apiURL = this.productURL ;
     return this.delete(id);
   }

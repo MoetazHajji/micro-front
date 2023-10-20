@@ -27,7 +27,7 @@ export class ProductService {
     return this.productApi.findAll(params);
   }
 
-  removeProduct(id : string){
+  removeProduct(id : number){
     return this.productApi.removeProduct(id);
   }
 

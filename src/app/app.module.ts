@@ -7,6 +7,12 @@ import {DashboardModule} from "./dashboard/dashboard.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {DropdownModule} from "primeng/dropdown";
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    DropdownModule,
+    InputMaskModule,
+    InputSwitchModule,
+    InputTextModule,
+    InputNumberModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -41,7 +41,7 @@ export abstract class ResourceService<T extends ResourceModel<T>> {
             .pipe(map((result) => new this.tConstructor(result)));
     }
 
-    protected delete(id: string): Observable<void> {
+    protected delete(id: any): Observable<void> {
         return this.httpClient.delete<void>(`${this.backendBaseUrl}${this.apiURL}/${id}`);
     }
 }

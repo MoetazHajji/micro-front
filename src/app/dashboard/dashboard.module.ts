@@ -11,7 +11,7 @@ import {ToastModule} from "primeng/toast";
 import {TableModule} from "primeng/table";
 import {DropdownModule} from "primeng/dropdown";
 import {MultiSelectModule} from "primeng/multiselect";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToolbarModule} from "primeng/toolbar";
 import {FileUploadModule} from "primeng/fileupload";
 import {RatingModule} from "primeng/rating";
@@ -20,6 +20,8 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {InputNumberModule} from "primeng/inputnumber";
 import {RadioButtonModule} from "primeng/radiobutton";
 import {DialogModule} from "primeng/dialog";
+import { AddProductComponent } from './product/add-product/add-product.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,14 @@ import {DialogModule} from "primeng/dialog";
     HeaderComponent,
     FooterComponent,
     AdminLayoutComponent,
-    ProductComponent
+    ProductComponent,
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     DashboardRoutingModule,
     ToastModule,
     TableModule,
