@@ -8,7 +8,6 @@ export class ProductModel extends ResourceModel<ProductModel>{
   name_product?: string;
   description?: string;
   price?: number;
-  quantity?: number;
   count_order?: number;
   image?: string;
   type_product?:Type_product
