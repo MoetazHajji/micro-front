@@ -18,6 +18,8 @@ export class AddProductComponent implements OnInit {
 
   product:any;
   public productForm!: FormGroup;
+
+
   constructor(
     private productService:ProductService,
     private messageService:MessageService,

@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ProductService} from "../../../core/services/product/product.service";
 import {ConfirmationService, MessageService} from "primeng/api";
-import {ProductModel} from "../../../core/models/product.model";
 
 @Component({
   selector: 'app-edit-product',
@@ -20,6 +19,8 @@ export class EditProductComponent implements OnInit {
 
   public productForm!: FormGroup;
 
+  public editProductForm!: FormGroup;
+
   product!:any;
   productToUpdate!:any;
 
@@ -36,27 +37,28 @@ export class EditProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getProductById();
     this.initForm();
-
-
+    console.log(this.product);
   }
 
   initForm(){
-
-    this.productService.getProductById(this.ProductId).subscribe((res:any) =>{
-      this.product = res
-      this.productForm = this.formBuilder.group({
-        'id':[this.ProductId],
-        'name_product': [this.product.name_product, Validators.required],
-        'description': [this.product.description, Validators.required],
-        'price': [this.product.price, Validators.required],
-        'type_product': [this.product.type_product, Validators.required],
-        'image': [this.product.image, Validators.required],
-        'quantity':[this.product.quantity,Validators.required],
-        count_order:0
-      })
+    this.productForm = this.formBuilder.group({
+      'name_product': [this.product, Validators.required],
+      'description': ['', Validators.required],
+      'price': ['', Validators.required],
+      'type_product': ['', Validators.required],
+      'image': ['', Validators.required],
+      'quantity':['',Validators.required],
+      count_order:0
     })
+  }
 
+  getProductById(){
+    this.productService.getProductById(this.ProductId).subscribe((res:any) => {
+      this.product = res
+      console.log(this.product);
+    });
   }
 
 
@@ -67,6 +69,7 @@ export class EditProductComponent implements OnInit {
 
   editProduct(){
     this.productToUpdate = this.productForm.value
+    console.log(this.productToUpdate)
     this.productService.updateProduct(this.productToUpdate).subscribe(res => {
       console.log(this.product)
     })

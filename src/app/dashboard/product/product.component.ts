@@ -50,6 +50,7 @@ export class ProductComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.productService.removeProduct(product.id).subscribe(res => {
+          this.products.splice(product.id, 1); // Remove the item from the array
           this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
         })
       }
