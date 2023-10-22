@@ -48,6 +48,10 @@ import { CommandeComponent } from './commande/commande.component';
 import { AddCommandeComponent } from './commande/add-commande/add-commande.component';
 import { EditCommandeComponent } from './commande/edit-commande/edit-commande.component';
 import { CommandeLineComponent } from './commande/commande-line/commande-line.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { AddAppointmentComponent } from './appointment/add-appointment/add-appointment.component';
+import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
+import {CalendarModule} from "primeng/calendar";
 
 @NgModule({
   declarations: [
@@ -87,7 +91,10 @@ import { CommandeLineComponent } from './commande/commande-line/commande-line.co
     CommandeComponent,
     AddCommandeComponent,
     EditCommandeComponent,
-    CommandeLineComponent
+    CommandeLineComponent,
+    AppointmentComponent,
+    AddAppointmentComponent,
+    UpdateAppointmentComponent
   ],
   imports: [
     CommonModule,
@@ -105,7 +112,8 @@ import { CommandeLineComponent } from './commande/commande-line/commande-line.co
     ConfirmDialogModule,
     InputNumberModule,
     RadioButtonModule,
-    DialogModule
+    DialogModule,
+    CalendarModule
   ],
   providers: [
        // -----------  Start User Service  ---------------------

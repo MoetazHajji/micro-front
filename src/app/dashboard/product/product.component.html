@@ -14,6 +14,7 @@
 
 
     <app-add-product *ngIf="addNewProductModal" [modalNewProduct]="addNewProductModal" (closeModalNewProduct)="hideDialog()"></app-add-product>
+
     <app-edit-product *ngIf="editProductModal" [modalEditProduct]="editProductModal"
                      [ProductId]="getProductId"
                      (closeModalNewProduct)="hideDialog()"></app-edit-product>
