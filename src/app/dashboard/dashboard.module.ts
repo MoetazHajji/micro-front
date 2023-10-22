@@ -22,6 +22,12 @@ import {RadioButtonModule} from "primeng/radiobutton";
 import {DialogModule} from "primeng/dialog";
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { SampleComponent } from './sample/sample.component';
+import { AddSampleComponent } from './sample/add-sample/add-sample.component';
+import { EditSampleComponent } from './sample/edit-sample/edit-sample.component';
+import { TestComponent } from './test/test.component';
+import { AddTestComponent } from './test/add-test/add-test.component';
+import { EditTestComponent } from './test/edit-test/edit-test.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { EditProductComponent } from './product/edit-product/edit-product.compon
     AdminLayoutComponent,
     ProductComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    SampleComponent,
+    AddSampleComponent,
+    EditSampleComponent,
+    TestComponent,
+    AddTestComponent,
+    EditTestComponent
   ],
   imports: [
     CommonModule,
