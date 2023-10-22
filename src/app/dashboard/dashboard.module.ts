@@ -44,6 +44,10 @@ import { DateNowValidatorDirective } from './user/libraries/DateNowValidatorDire
 import { ExperienceRangeValidatorDirective } from './user/libraries/ExperienceRangeValidatorDirective';
 import { SameValueValidatorDirective } from './user/libraries/SameValueValidatorDirective';
 import { GuardUserFrontService } from '../core/services/user/guard-user-front-service';
+import { CommandeComponent } from './commande/commande.component';
+import { AddCommandeComponent } from './commande/add-commande/add-commande.component';
+import { EditCommandeComponent } from './commande/edit-commande/edit-commande.component';
+import { CommandeLineComponent } from './commande/commande-line/commande-line.component';
 
 @NgModule({
   declarations: [
@@ -76,9 +80,14 @@ import { GuardUserFrontService } from '../core/services/user/guard-user-front-se
     PositiveNumberValidatorDirective,
     DateNowValidatorDirective,
     ExperienceRangeValidatorDirective,
-    SameValueValidatorDirective
+    SameValueValidatorDirective,
     // -----------  End User Service  ---------------------
 
+    EditProductComponent,
+    CommandeComponent,
+    AddCommandeComponent,
+    EditCommandeComponent,
+    CommandeLineComponent
   ],
   imports: [
     CommonModule,
