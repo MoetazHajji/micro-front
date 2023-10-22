@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CalendarModule } from 'primeng/calendar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {DashboardModule} from "./dashboard/dashboard.module";
@@ -13,6 +13,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DATE_PIPE_DEFAULT_TIMEZONE } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CalendarModule,
     DashboardModule,
     FormsModule,
     HttpClientModule,
@@ -34,7 +36,12 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputNumberModule,
     InputTextareaModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: DATE_PIPE_DEFAULT_TIMEZONE,
+      useValue: { dateFormat: "longDate" }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

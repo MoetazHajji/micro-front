@@ -64,7 +64,7 @@ export class AddProductComponent implements OnInit {
       this.cancel();
       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Added', life: 3000 });
     }, error => {
-      this.messageService.add({ severity: 'error', summary: 'Failed', detail: 'Product Added', life: 3000 });
+      this.messageService.add({ severity: 'error', summary: 'Failed', detail: 'Product Failed', life: 3000 });
     })
   }
 
