@@ -28,6 +28,22 @@ import { EditSampleComponent } from './sample/edit-sample/edit-sample.component'
 import { TestComponent } from './test/test.component';
 import { AddTestComponent } from './test/add-test/add-test.component';
 import { EditTestComponent } from './test/edit-test/edit-test.component';
+import { SignUpComponent } from './user/authentication/sign-up/sign-up.component';
+import { SignInComponent } from './user/authentication/sign-in/sign-in.component';
+import { ProfileAccountComponent } from './user/account/profile-account/profile-account.component';
+import { EditGlobalComponent } from './user/account/edit-global/edit-global.component';
+import { MessageBoxConfirmationStandartComponent } from './user/package-components/message-box-confirmation-standart/message-box-confirmation-standart.component';
+import { MessageBoxResponseComponent } from './user/package-components/message-box-response/message-box-response.component';
+import { MessageBoxUploadImgComponent } from './user/package-components/message-box-upload-img/message-box-upload-img.component';
+import { PageErrorComponent } from './user/package-components/page-error/page-error.component';
+import { SuccessSignUpComponent } from './user/package-components/success-sign-up/success-sign-up.component';
+import { FormForgotPasswordComponent } from './user/account/form-forgot-password/form-forgot-password.component';
+import { UpdatePasswordForgotComponent } from './user/account/update-password-forgot/update-password-forgot.component';
+import { PositiveNumberValidatorDirective } from './user/libraries/PositiveNumberValidatorDirective';
+import { DateNowValidatorDirective } from './user/libraries/DateNowValidatorDirective';
+import { ExperienceRangeValidatorDirective } from './user/libraries/ExperienceRangeValidatorDirective';
+import { SameValueValidatorDirective } from './user/libraries/SameValueValidatorDirective';
+import { GuardUserFrontService } from '../core/services/user/guard-user-front-service';
 
 @NgModule({
   declarations: [
@@ -43,7 +59,26 @@ import { EditTestComponent } from './test/edit-test/edit-test.component';
     EditSampleComponent,
     TestComponent,
     AddTestComponent,
-    EditTestComponent
+    EditTestComponent,
+
+    // -----------  Start User Service  ---------------------
+    SignUpComponent,
+    SignInComponent,
+    ProfileAccountComponent,
+    EditGlobalComponent,
+    MessageBoxConfirmationStandartComponent,
+    MessageBoxResponseComponent,
+    MessageBoxUploadImgComponent,
+    PageErrorComponent,
+    SuccessSignUpComponent,
+    FormForgotPasswordComponent,
+    UpdatePasswordForgotComponent,
+    PositiveNumberValidatorDirective,
+    DateNowValidatorDirective,
+    ExperienceRangeValidatorDirective,
+    SameValueValidatorDirective
+    // -----------  End User Service  ---------------------
+
   ],
   imports: [
     CommonModule,
@@ -62,6 +97,11 @@ import { EditTestComponent } from './test/edit-test/edit-test.component';
     InputNumberModule,
     RadioButtonModule,
     DialogModule
+  ],
+  providers: [
+       // -----------  Start User Service  ---------------------
+    GuardUserFrontService
+       // -----------  End User Service  ---------------------
   ]
 })
 export class DashboardModule {}
