@@ -13,6 +13,7 @@ import { EditGlobalComponent } from './user/account/edit-global/edit-global.comp
 import { GuardUserFrontService } from '../core/services/user/guard-user-front-service';
 import { SampleComponent } from './sample/sample.component';
 import {TestComponent} from "./test/test.component";
+import {CommandeComponent} from "./commande/commande.component";
 
 const routes: Routes = [
   {path:'',component:ProductComponent},
@@ -33,6 +34,15 @@ const routes: Routes = [
     children: [{
       path:'',component:TestComponent
     }]
+  },
+  {
+    path:'commande',component:AdminLayoutComponent,
+    children: [
+      {
+        path: '',component: CommandeComponent
+      }
+
+    ]
   }
 
 
@@ -52,16 +62,16 @@ const routes: Routes = [
     path: 'page-error',
     component: PageErrorComponent,
   },
-  { 
+  {
     path: 'forgot-password',
-    component: FormForgotPasswordComponent   
-  },
-  { 
-    path: 'update-password-forgot/:username/:code',
-    component: UpdatePasswordForgotComponent   
+    component: FormForgotPasswordComponent
   },
   {
-    path: 'user', canActivateChild : [GuardUserFrontService], 
+    path: 'update-password-forgot/:username/:code',
+    component: UpdatePasswordForgotComponent
+  },
+  {
+    path: 'user', canActivateChild : [GuardUserFrontService],
     component: AdminLayoutComponent,
     children: [
       {
@@ -71,7 +81,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'user/account', canActivateChild : [GuardUserFrontService], 
+    path: 'user/account', canActivateChild : [GuardUserFrontService],
     component: AdminLayoutComponent,
     children: [
       {
@@ -81,7 +91,7 @@ const routes: Routes = [
     ]
   }
  // -----------  End User Service  ---------------------
- 
+
 ];
 
 @NgModule({

@@ -77,4 +77,5 @@ export class ProductComponent implements OnInit {
     this.editProductModal = !this.editProductModal;
   }
 
+
 }
