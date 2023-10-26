@@ -52,6 +52,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { AddAppointmentComponent } from './appointment/add-appointment/add-appointment.component';
 import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
 import {CalendarModule} from "primeng/calendar";
+import { LeaveAuthorisationComponent } from './leave-authorisation/leave-authorisation.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {CalendarModule} from "primeng/calendar";
     ProductComponent,
     AddProductComponent,
     EditProductComponent,
+    LeaveAuthorisationComponent,
     SampleComponent,
     AddSampleComponent,
     EditSampleComponent,
