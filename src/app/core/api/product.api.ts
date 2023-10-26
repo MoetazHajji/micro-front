@@ -14,7 +14,7 @@ import {map} from "rxjs/operators";
 export class ProductApi extends ResourceService<ProductModel> {
 
   url = `${environment.apiUrl}`
-  public productURL = '/product/';
+  public productURL = '/stock-service/product/';
 
   constructor(
     private http:HttpClient

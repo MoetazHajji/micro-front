@@ -10,7 +10,7 @@ export class ProductModel extends ResourceModel<ProductModel>{
   price?: number;
   count_order?: number;
   image?: string;
-  type_product?:Type_product
+  type_product?:Type_product;
 
   constructor(model?: Partial<ProductModel>) {
     super(model);

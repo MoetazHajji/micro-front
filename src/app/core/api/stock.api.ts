@@ -14,7 +14,7 @@ import {map} from "rxjs/operators";
 export class StockApi extends ResourceService<StockModel> {
 
   url = `${environment.apiUrl}`
-  public stockURL = '/stock/';
+  public stockURL = '/stock-service/stock/';
 
   constructor(
     private http:HttpClient

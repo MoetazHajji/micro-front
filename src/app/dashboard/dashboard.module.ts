@@ -52,6 +52,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { AddAppointmentComponent } from './appointment/add-appointment/add-appointment.component';
 import { UpdateAppointmentComponent } from './appointment/update-appointment/update-appointment.component';
 import {CalendarModule} from "primeng/calendar";
+import { StockComponent } from './stock/stock.component';
+import { AddStockComponent } from './stock/add-stock/add-stock.component';
+import { EditStockComponent } from './stock/edit-stock/edit-stock.component';
 import { LeaveAuthorisationComponent } from './leave-authorisation/leave-authorisation.component';
 
 @NgModule({
@@ -96,7 +99,11 @@ import { LeaveAuthorisationComponent } from './leave-authorisation/leave-authori
     CommandeLineComponent,
     AppointmentComponent,
     AddAppointmentComponent,
-    UpdateAppointmentComponent
+    UpdateAppointmentComponent,
+    EditProductComponent,
+    StockComponent,
+    AddStockComponent,
+    EditStockComponent
   ],
   imports: [
     CommonModule,

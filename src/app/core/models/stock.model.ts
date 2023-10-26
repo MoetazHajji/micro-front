@@ -13,8 +13,8 @@ export class StockModel extends ResourceModel<StockModel> {
   used_storage?: number;
   LocalDate?: Date;
   location?: string;
-  type_product?:Type_product
-  state?:State
+  type_product?:Type_product;
+  state?:State;
 
   constructor(model?: Partial<StockModel>) {
     super(model);

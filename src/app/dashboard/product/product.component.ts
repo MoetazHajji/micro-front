@@ -21,17 +21,14 @@ export class ProductComponent implements OnInit {
 
   product!: ProductModel;
 
-  type_product = [
-    { label: 'Equipment', value: 'EQUIPMENT' },
-    { label: 'Reagent', value: 'REAGENT' },
-  ];
 
   submitted: boolean = false;
 
   constructor(
     private messageService: MessageService,
     private confirmationService:ConfirmationService,
-    private productService:ProductService) {}
+    private productService:ProductService
+  ) {}
 
   ngOnInit() {
     this.productService.findAllProducts().subscribe(res =>{
@@ -50,7 +47,7 @@ export class ProductComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.productService.removeProduct(product.id).subscribe(res => {
-          this.products.splice(product.id, 1); // Remove the item from the array
+          this.products.splice(product.id, 1);
           this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
         })
       }
