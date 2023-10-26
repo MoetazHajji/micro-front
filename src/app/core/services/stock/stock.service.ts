@@ -11,23 +11,27 @@ export class StockService {
     private stockApi:StockApi
   ) {
   }
-  createProduct(stock:StockModel){
+  createStock(stock:StockModel){
     return this.stockApi.createStock(stock);
   }
 
-  updateProduct(stock:StockModel){
+  updateStock(stock:StockModel){
     return this.stockApi.updateStock(stock);
   }
 
-  getProductById(id:string){
+  getStockById(id:string){
     return this.stockApi.searchStockById(id);
   }
 
-  findAllProducts(params?:any){
+  findAllStocks(params?:any){
     return this.stockApi.findAll(params);
   }
 
-  removeProduct(id : string){
+  removeStock(id : string){
     return this.stockApi.removeStock(id);
+  }
+
+  getStockProducts(id:any){
+    return this.stockApi.getStockProducts(id);
   }
 }

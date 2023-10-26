@@ -15,6 +15,8 @@ import { SampleComponent } from './sample/sample.component';
 import {TestComponent} from "./test/test.component";
 import {CommandeComponent} from "./commande/commande.component";
 import {AppointmentComponent} from "./appointment/appointment.component";
+import {StockComponent} from "./stock/stock.component";
+import {DetailsStockComponent} from "./stock/details-stock/details-stock.component";
 
 const routes: Routes = [
   {path:'',component:ProductComponent},
@@ -50,6 +52,16 @@ const routes: Routes = [
     children: [{
       path:'', component:AppointmentComponent
     }]
+  },
+  {
+    path:'stock',component:AdminLayoutComponent,
+    children: [{
+      path: '',component: StockComponent
+    },
+    {
+      path: 'details/:id',component: DetailsStockComponent
+    }
+    ]
   }
 
 

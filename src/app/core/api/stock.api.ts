@@ -14,7 +14,7 @@ import {map} from "rxjs/operators";
 export class StockApi extends ResourceService<StockModel> {
 
   url = `${environment.apiUrl}`
-  public stockURL = '/stock/';
+  public stockURL = '/stock-service/stock/';
 
   constructor(
     private http:HttpClient
@@ -48,5 +48,9 @@ export class StockApi extends ResourceService<StockModel> {
     this.apiURL = this.stockURL;
     // const config = criteria !== undefined ? {params: {name_Stock: criteria}} : {};
     return this.get();
+  }
+
+  public getStockProducts(id: any): Observable<any>{
+    return this.http.get(`${this.url}${this.stockURL}${id}`)
   }
 }
