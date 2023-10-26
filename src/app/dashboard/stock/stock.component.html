@@ -3,12 +3,12 @@
     <p-toast></p-toast>
     <p-toolbar styleClass="mb-4 gap-2">
       <ng-template pTemplate="left">
-        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" style="font-size: 10px"
+        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-button-outlined mr-2" style="font-size: 10px"
                 (click)="openNew()"></button>
       </ng-template>
 
       <ng-template pTemplate="right">
-        <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+        <button pButton pRipple label="Details" icon="pi pi-upload" class="p-button-help p-button-outlined"></button>
       </ng-template>
     </p-toolbar>
 
@@ -88,10 +88,12 @@
           <td>{{ stock.nbProduct}}</td>
           <td>{{ stock.LocalDate}}</td>
           <td>
-            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-button-outlined"
                     (click)="EditStock(stock.id)"></button>
-            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger p-button-outlined"
                     (click)="deleteStock(stock)"></button>
+            <button pButton pRipple icon="pi pi-clone" class="p-button-rounded p-button-warning p-button-outlined"
+                    [routerLink]="['details/'+stock.id]"></button>
           </td>
         </tr>
       </ng-template>

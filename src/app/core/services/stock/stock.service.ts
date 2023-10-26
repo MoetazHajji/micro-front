@@ -30,4 +30,8 @@ export class StockService {
   removeStock(id : string){
     return this.stockApi.removeStock(id);
   }
+
+  getStockProducts(id:any){
+    return this.stockApi.getStockProducts(id);
+  }
 }

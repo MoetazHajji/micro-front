@@ -50,4 +50,5 @@ export class ProductApi extends ResourceService<ProductModel> {
 
     return this.get(config);
   }
+
 }

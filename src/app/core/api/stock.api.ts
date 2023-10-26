@@ -49,4 +49,8 @@ export class StockApi extends ResourceService<StockModel> {
     // const config = criteria !== undefined ? {params: {name_Stock: criteria}} : {};
     return this.get();
   }
+
+  public getStockProducts(id: any): Observable<any>{
+    return this.http.get(`${this.url}${this.stockURL}${id}`)
+  }
 }

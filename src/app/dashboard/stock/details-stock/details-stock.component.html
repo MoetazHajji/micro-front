@@ -2,26 +2,24 @@
   <div class="content-page">
     <p-toast></p-toast>
     <p-toolbar styleClass="mb-4 gap-2">
-      <ng-template pTemplate="left">
-        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" style="font-size: 10px"
-                (click)="openNew()"></button>
-      </ng-template>
+      <figure class="fir-image-figure">
 
-      <ng-template pTemplate="right">
-        <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
-      </ng-template>
+        <a class="fir-imageover" rel="noopener" target="_blank">
+          <img class="fir-author-image fir-clickcircle" src="./assets/images/stock.jpg" alt="David East - Author">
+          <div class="fir-imageover-color"></div>
+        </a>
+
+        <figcaption>
+          <div class="fig-author-figure-title" style="font-size: 20px">Stock : {{stock.location}}</div>
+          <div class="fig-author-figure-title">Unit {{stock.unit}}</div>
+          <div class="fig-author-figure-title">Free Storage {{stock.free_storage}}</div>
+        </figcaption>
+      </figure>
     </p-toolbar>
-
-
-    <app-add-product *ngIf="addNewProductModal" [modalNewProduct]="addNewProductModal" (closeModalNewProduct)="hideDialog()"></app-add-product>
-
-    <app-edit-product *ngIf="editProductModal" [modalEditProduct]="editProductModal"
-                     [ProductId]="getProductId"
-                     (closeModalNewProduct)="hideDialog()"></app-edit-product>
 
     <p-table
       #dt
-      [value]="products"
+        [value]="products"
       [rows]="10"
       [paginator]="true"
       [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
@@ -58,8 +56,6 @@
           <th pSortableColumn="type-product" style="min-width:10rem">Type Product
             <p-sortIcon field="type-product"></p-sortIcon>
           </th>
-          <th style="min-width:10rem">Actions
-          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-product>
@@ -67,18 +63,11 @@
           <td>{{ product.name_product }}</td>
           <td><img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.image"
                    [alt]="product.name" width="50" class="shadow-4"/></td>
-          <td>{{ product.quantity }}</td>
           <td>{{ product.price }}DT</td>
           <td>{{ product.description }}</td>
           <td>{{ product.reference}}</td>
           <td>
             <p-tag [value]="product.type_product" [severity]="getSeverity(product.type_product)"></p-tag>
-          </td>
-          <td>
-            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
-                    (click)="EditProduct(product.id)"></button>
-            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-                    (click)="deleteProduct(product)"></button>
           </td>
         </tr>
       </ng-template>

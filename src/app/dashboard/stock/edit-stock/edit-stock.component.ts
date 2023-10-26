@@ -24,7 +24,7 @@ export class EditStockComponent implements OnInit {
 
   public editStockForm!: FormGroup;
 
-  stock:StockModel = new StockModel();
+  stock!:StockModel;
   stockToUpdate!:any;
 
   state = [
@@ -46,7 +46,10 @@ export class EditStockComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initForm();
+    // this.initForm();
+    this.stockService.getStockById(this.StockId).subscribe(res => {
+      this.stock = res
+    })
   }
 
   initForm(){
