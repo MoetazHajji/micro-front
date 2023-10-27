@@ -16,8 +16,8 @@ export class commandeApi extends ResourceService<CommandeModel>{
   url = `${environment.apiUrl}`
   public commandeURL = '/commande-service/command/getAllCommands';
   public deleturl = '/commande-service/command/delete';
-  public addUrl = '/commande-service/command/add';
-  public updateUrl = '/commande-service/command/modify';
+  public addUrl = '/commande-service/command/add/1';
+  public updateUrl = '/commande-service/command/modify/1/{id}';
 
 
   constructor(
@@ -26,14 +26,14 @@ export class commandeApi extends ResourceService<CommandeModel>{
     super(http , CommandeModel)
   }
 
-  public createCommande(commande: CommandeModel): Observable<string | undefined> {
+  public createCommande(url: string, commande: CommandeModel): Observable<string | undefined> {
     this.apiURL = this.addUrl;
     return this.post(commande).pipe(
       map((commande : CommandeModel) => commande.id)
     );
   }
 
-  public updateCommande(commande: CommandeModel ): Observable<CommandeModel> {
+  public updateCommande(url: string, commande: CommandeModel): Observable<CommandeModel> {
     this.apiURL = this.updateUrl;
     return this.put(commande);
   }

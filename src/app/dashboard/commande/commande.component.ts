@@ -21,6 +21,7 @@ export class CommandeComponent implements OnInit {
 
   commande!: CommandeModel;
   submitted: boolean = false;
+  idA:any ;
 
 
   constructor(
@@ -75,10 +76,12 @@ export class CommandeComponent implements OnInit {
     }
   }
 
-  EditCommande(event: any){
-    this.getCommandeId = event
+  EditCommande(commandeId: any) {
     this.editCommandeModal = !this.editCommandeModal;
+    this.getCommandeId = commandeId; // Mettre à jour getCommandeId avec la valeur de commandeId
   }
+
+
 
   refresh(): void {
     window.location.reload();

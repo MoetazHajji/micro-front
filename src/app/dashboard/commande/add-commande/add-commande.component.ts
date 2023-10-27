@@ -58,15 +58,16 @@ export class AddCommandeComponent implements OnInit {
   addNewCommande() {
     this.commande = this.commandeForm.value;
     this.commande.reference = this.commandeService.generateCode(8);
-    console.log(this.commande);
-    this.commandeService.createCommande(this.commande).subscribe(res => {
+    const idA = 1; // Remplacez par l'ID du compte approprié
+    this.commandeService.addCommande(this.commande, idA).subscribe(res => {
       this.cancel();
       this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Commande Added', life: 3000});
       this.refresh();
     }, error => {
       this.messageService.add({severity: 'error', summary: 'Failed', detail: 'Commande Added', life: 3000});
-    })
+    });
   }
+
 
   cancel() {
     this.modalNewCommande = false;
