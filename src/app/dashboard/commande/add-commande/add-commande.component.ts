@@ -3,6 +3,7 @@ import {ConfirmationService, MessageService} from "primeng/api";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {CommandeService} from "../../../core/services/commande/commande.service";
+import {AccountService} from "../../../core/services/user/account.service";
 
 @Component({
   selector: 'app-add-commande',
@@ -18,23 +19,26 @@ export class AddCommandeComponent implements OnInit {
 
   commande: any;
   public commandeForm!: FormGroup;
-
+  id!:any;
 
   constructor(
     private commandeService: CommandeService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private formBuilder: FormBuilder,
+    private accountService:AccountService
   ) {
   }
 
   ngOnInit(): void {
+    this.id = this.accountService.getAccoutDto().id;
     this.initForm();
   }
 
 
   initForm() {
     this.commandeForm = this.formBuilder.group({
+      'idA':this.id,
       'date': ['', Validators.required],
       'notice': ['', Validators.required],
       'quantity_product': ['', Validators.required],

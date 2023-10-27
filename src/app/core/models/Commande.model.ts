@@ -11,6 +11,7 @@ export class CommandeModel extends ResourceModel<CommandeModel> {
   date?:string;
   //date?:Date;
   total_price?: number;
+  idA?:number;
 
 
   constructor(model?: Partial<CommandeModel>) {
