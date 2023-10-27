@@ -18,11 +18,11 @@ export class TestApi extends ResourceService<TestModel> {
 
   url = `${environment.apiUrl}`
 
-  public sampleURL = 'Analyse-service/Test/all';
-  public sampleUR = 'Analyse-service/Test/add';
-  public sampleU = 'Analyse-service/Test/delete';
-  public sample = 'Analyse-service/Test/update';
-  public sampl = 'Analyse-service/Test/get';
+  public sampleURL = '/Analyse-service/Test/all';
+  public sampleUR = '/Analyse-service/Test/add';
+  public sampleU = '/Analyse-service/Test/delete';
+  public sample = '/Analyse-service/Test/update';
+  public sampl = '/Analyse-service/Test/get';
 
   constructor(
     private http:HttpClient

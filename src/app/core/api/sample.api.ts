@@ -18,11 +18,11 @@ export class SampleApi extends ResourceService<SampleModel> {
 
   url = `${environment.apiUrl}`
 
-  public sampleURL = 'Analyse-service/Sample/all';
-  public sampleUR = 'Analyse-service/Sample/add';
-  public sampleU = 'Analyse-service/Sample/delete';
-  public sample = 'Analyse-service/Sample/update';
-  public sampl = 'Analyse-service/Sample/get';
+  public sampleURL = '/Analyse-service/Sample/all';
+  public sampleUR = '/Analyse-service/Sample/add';
+  public sampleU = '/Analyse-service/Sample/delete';
+  public sample = '/Analyse-service/Sample/update';
+  public sampl = '/Analyse-service/Sample/get';
 
   constructor(
     private http:HttpClient
