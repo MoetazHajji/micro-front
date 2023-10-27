@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
+  username:any = localStorage.getItem('usernameProfile');
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.username)
   }
 
 }

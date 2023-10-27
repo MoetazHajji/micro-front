@@ -42,9 +42,17 @@ export class EditProductComponent implements OnInit {
     this.productService.getProductById(this.ProductId).pipe(
       tap((res: any) => {
         this.product = res;
+        this.productForm = this.formBuilder.group({
+          'name_product': [this.product, Validators.required],
+          'description': [this.product.description, Validators.required],
+          'price': [this.product.price, Validators.required],
+          'type_product': [this.product.type_product, Validators.required],
+          'image': [this.product.image, Validators.required],
+          'count_order': 0
+        });
       })
     );
-    console.log(this.product.name_product)
+
   this.initForm()
   }
 

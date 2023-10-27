@@ -19,7 +19,12 @@ import {StockComponent} from "./stock/stock.component";
 import {DetailsStockComponent} from "./stock/details-stock/details-stock.component";
 
 const routes: Routes = [
-  {path:'',component:ProductComponent},
+  {
+    path:'',component:AdminLayoutComponent,
+    children: [{
+      path:'',component:ProfileAccountComponent
+    }]
+  },
   {
     path:'product',component:AdminLayoutComponent,
     children: [{

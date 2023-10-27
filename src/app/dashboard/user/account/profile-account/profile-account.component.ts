@@ -22,6 +22,7 @@ export class ProfileAccountComponent implements OnInit {
   ngOnInit(): void {
     this.username = this.route.snapshot.params['username'];
     console.log( this.username );
+    localStorage.setItem('usernameProfile',this.username);
     this.accountService. getByUsername(this.username).subscribe(
       (response) => {
         const account : AccountDto = response.body;
@@ -32,15 +33,15 @@ export class ProfileAccountComponent implements OnInit {
             Category.PHOTOPROFILE);
        }
       ,(error) => {
-        this.stateMsgBoxAuth = true ; 
-        this.authService.msgReponseStatusDto =  
+        this.stateMsgBoxAuth = true ;
+        this.authService.msgReponseStatusDto =
         { title : "Error", datestamp: new Date() , timestamp: new Date(),status : ReponseStatus.ERROR , message : error.message};
       }) ;
 
     this.accountService.coverProfile = this.accountService.getLastFile(this.accountService.accountDto.attachementsDto,
       Category.COVERPICTURE);
-    console.log(   this.accountService.accountDto); 
-  
+    console.log(   this.accountService.accountDto);
+
   }
 
   public onClickToGoEditAccount():void {this.accountService.goToComponent('user/account/update-profile');}
@@ -56,7 +57,7 @@ export class ProfileAccountComponent implements OnInit {
   //Personal Information  upload image profile
   stateMsgBoxUploadImgCoverPersonalInformation : boolean = false;
   onClickOnUploadCoverPersonalInformation():void { this.stateMsgBoxUploadImgCoverPersonalInformation = true;}
-  onYesNoEventUploadCoverImgPersonalInformation($event:any):void {this.stateMsgBoxUploadImgCoverPersonalInformation = $event ;} 
+  onYesNoEventUploadCoverImgPersonalInformation($event:any):void {this.stateMsgBoxUploadImgCoverPersonalInformation = $event ;}
 
 
   uploadCoverProfile($event:File):void {
@@ -66,12 +67,12 @@ export class ProfileAccountComponent implements OnInit {
       this.accountService.accountDto.attachementsDto.push(photo_Cover);
       this.accountService.coverProfile = this.accountService.getLastFile(this.accountService.accountDto.attachementsDto,
         Category.COVERPICTURE);
-      
+
       this.accountService.setAccountDto(this.accountService.accountDto);
      }
     ,(error) => {
-      this.stateMsgBoxAuth = true ; 
-      this.authService.msgReponseStatusDto =  
+      this.stateMsgBoxAuth = true ;
+      this.authService.msgReponseStatusDto =
       { title : "Error", datestamp: new Date() , timestamp: new Date(),status : ReponseStatus.ERROR , message : error.message};
     }) ;
 }

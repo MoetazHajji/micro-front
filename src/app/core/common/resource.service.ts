@@ -37,7 +37,7 @@ export abstract class ResourceService<T extends ResourceModel<T>> {
 
     protected put(resource: Partial<T> & { toJson: () => T }): Observable<T> {
         return this.httpClient
-            .put<T>(`${this.backendBaseUrl}${this.apiURL}`, resource.toJson())
+            .put<T>(`${this.backendBaseUrl}${this.apiURL}`, resource)
             .pipe(map((result) => new this.tConstructor(result)));
     }
 

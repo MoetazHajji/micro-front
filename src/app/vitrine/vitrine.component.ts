@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vitrine',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VitrineComponent implements OnInit {
 
-  constructor() { }
+  userConnected : any = localStorage.getItem('AccountDto');
+
+  constructor(
+    private route:Router
+  ) { }
 
   ngOnInit(): void {
+    console.log(JSON.stringify(this.userConnected));
+  }
+
+  connectedUser(){
+    if (this.userConnected== null){
+      this.route.navigateByUrl('/sign-in');
+    }else {
+      this.route.navigateByUrl('/admin/product')
+    }
   }
 
 }

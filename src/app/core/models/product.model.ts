@@ -11,6 +11,7 @@ export class ProductModel extends ResourceModel<ProductModel>{
   count_order?: number;
   image?: string;
   type_product?:Type_product;
+  quantity?:number;
 
   constructor(model?: Partial<ProductModel>) {
     super(model);

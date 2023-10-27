@@ -24,7 +24,7 @@ export class EditStockComponent implements OnInit {
 
   public editStockForm!: FormGroup;
 
-  stock!:StockModel;
+  stock:StockModel = new StockModel();
   stockToUpdate!:any;
 
   state = [
@@ -49,19 +49,20 @@ export class EditStockComponent implements OnInit {
     // this.initForm();
     this.stockService.getStockById(this.StockId).subscribe(res => {
       this.stock = res
+      console.log('helllo')
+      this.initForm();
     })
   }
 
   initForm(){
     this.stockForm = this.formBuilder.group({
-      'unit': ['', Validators.required],
-      'storage': ['', Validators.required],
-      'location':['',Validators.required],
-      'type_product':['',Validators.required],
-      'state':['',Validators.required],
-      nbProduct:0,
-      total_quantity:0
-    })
+      id:this.StockId,
+      'unit': [this.stock.unit, Validators.required],
+      'storage': [this.stock.storage, Validators.required],
+      'location':[this.stock.location,Validators.required],
+      'type_product':[this.stock.type_product,Validators.required],
+      'state':[this.stock.state,Validators.required]
+    });
   }
 
   cancel(){
