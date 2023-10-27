@@ -12,13 +12,22 @@ export class CommandeService {
     private commondeApi:commandeApi
   ) {
   }
-  createCommande(commande:CommandeModel){
-    return this.commondeApi.createCommande(commande);
+  addCommande(commande: CommandeModel, idA: number) {
+    const url = '/commande-service/command/add/1/{id}'; // Utilisez l'URL personnalisée ici
+    return this.commondeApi.createCommande(url, commande);
   }
 
-  updatecommande(commande:CommandeModel){
-    return this.commondeApi.updateCommande(commande);
+  updatecommande(commande: CommandeModel, selectedCommandeId: number | null) {
+    if (selectedCommandeId !== null) {
+      const url = '/commande-service/command/modify/1/${selectedCommandeId}';
+      return this.commondeApi.updateCommande(url, commande);
+    } else {
+      throw new Error("L'ID de la commande nest pas trouver.");
+
+    }
   }
+
+
 
   getcommandeById(id:string){
     return this.commondeApi.searchCommandeById(id);
